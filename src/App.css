@@ -9,6 +9,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  background-color: whitesmoke;
 }
 
 .question-card {
@@ -17,7 +19,11 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: darkgray;
-  padding: 5em;
+  padding: 2em;
+}
+
+.question-card h2 {
+  color: rgba(28, 47, 106, 0.91);
 }
 
 ul {
@@ -26,16 +32,64 @@ ul {
 
 li {
   width: 50%;
+  min-width: fit-content;
   list-style: none;
-  padding: 1em;
+  padding: 0.5em;
   border: solid black 2px;
   border-radius: 50px;
   margin: 0 auto;
-  margin-top: 1em;
+  margin-top: 0.5em;
   text-align: center;
   font-size: 1.5rem;
 }
 
 li:hover {
   background-color: gainsboro;
+}
+
+.final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgrey;
+  width: 50%;
+  padding: 2em;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(236, 11, 11);
+  color: whitesmoke;
+  font-size: 1.3em;
+  padding: 1em;
+  width: 20%;
+  min-width: fit-content;
+  border-radius: 30px;
+}
+
+button:hover {
+  background-color: rgb(209, 25, 25);
+}
+
+@media only screen and (orientation: landscape) and (max-width: 700px) {
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .header h2 {
+    margin-bottom: 0px;
+  }
+
+  li {
+    font-size: 1em;
+    padding: 0.2em;
+  }
 }

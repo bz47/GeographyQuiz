@@ -1,27 +1,66 @@
 import { useState } from "react";
+import { questions } from "./questions";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [showfinalResults, setShowFinalResults] = useState(false);
+  const [score, setScore] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+
+  const optionClicked = (isCorrect) => {
+    if (isCorrect) {
+      setScore((prev) => prev + 1);
+    }
+    if (currentQuestion + 1 < questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowFinalResults(true);
+    }
+  };
+
+  const reset = () => {
+    setShowFinalResults(false);
+    setScore(0);
+    setCurrentQuestion(0);
+  };
 
   return (
     <main>
       {/*Header */}
-      <h1>Geography Quiz</h1>
-      <h2>Current Score: 2</h2>
-      {/*Questions */}
-      <div className="question-card">
-        <h1>Question 1 of 10</h1>
-        <h2>What is the Capital of Brazil?</h2>
-        <ul>
-          <li>Rio</li>
-          <li>Sao Paulo</li>
-          <li>Fortaleza</li>
-          <li>Brasilia</li>
-          <li>Salvador</li>
-        </ul>
+      <div className="header">
+        <h1>Geography Quiz</h1>
+        <h2>Current Score: {score} </h2>
       </div>
-      {/*Result */}
+
+      {showfinalResults ? (
+        <div className="final">
+          <h1>Final Score</h1>
+          <h2>
+            {" "}
+            {score} out of {questions.length} Correct - ( 20%)
+          </h2>
+          <button onClick={() => reset()}>Restart</button>
+        </div>
+      ) : (
+        <div className="question-card">
+          <h1>
+            Question {currentQuestion + 1} of {questions.length}
+          </h1>
+          <h2>{questions[currentQuestion].text}</h2>
+          <ul>
+            {questions[currentQuestion].options.map((option) => {
+              return (
+                <li
+                  key={option.id}
+                  onClick={() => optionClicked(option.isCorrect)}
+                >
+                  {option.answer}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </main>
   );
 }
