@@ -10,7 +10,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: rgba(212, 209, 209, 0.663);
 }
 
 .question-card {
