@@ -73,7 +73,7 @@ button:hover {
   background-color: rgb(209, 25, 25);
 }
 
-@media only screen and (orientation: landscape) and (max-width: 850px) {
+@media only screen and (orientation: landscape) and (max-width: 900px) {
   main {
     flex-direction: row;
     justify-content: space-between;
