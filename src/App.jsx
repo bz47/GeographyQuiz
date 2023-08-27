@@ -37,7 +37,8 @@ function App() {
           <h1>Final Score</h1>
           <h2>
             {" "}
-            {score} out of {questions.length} Correct - ( 20%)
+            {score} out of {questions.length} Correct - ({" "}
+            {(score / questions.length) * 100}%)
           </h2>
           <button onClick={() => reset()}>Restart</button>
         </div>
