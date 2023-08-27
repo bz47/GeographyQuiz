@@ -19,6 +19,7 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: darkgray;
+  border-radius: 50px;
   padding: 2em;
 }
 
