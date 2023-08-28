@@ -3,6 +3,7 @@
 }
 
 main {
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -13,8 +14,13 @@ main {
   background-color: rgba(212, 209, 209, 0.663);
 }
 
+.header h1 {
+  margin-top: 3em;
+}
+
 .question-card {
   min-width: 50vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,6 +81,13 @@ button:hover {
   background-color: rgb(209, 25, 25);
 }
 
+@media only screen and (orientation: portrait) and (max-width: 900px) {
+  .final,
+  .question-card {
+    border-radius: 0px;
+  }
+}
+
 @media only screen and (orientation: landscape) and (max-width: 900px) {
   main {
     flex-direction: row;
@@ -83,8 +96,12 @@ button:hover {
   }
 
   .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
+    height: 100vh;
   }
 
   .header h2 {
@@ -94,5 +111,14 @@ button:hover {
   li {
     font-size: 1em;
     padding: 0.2em;
+  }
+
+  .final,
+  .question-card {
+    border-radius: 0px;
+  }
+
+  .question-card {
+    padding-bottom: 0px;
   }
 }
