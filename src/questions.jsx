@@ -10,7 +10,7 @@ export const questions = [
     ],
   },
   {
-    text: "What is the capital of America?",
+    text: "What is the capital of the United States?",
     options: [
       { id: 0, answer: "Dallas", isCorrect: false },
       { id: 1, answer: "San Francisco", isCorrect: false },
